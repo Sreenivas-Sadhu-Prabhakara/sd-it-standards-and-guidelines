@@ -1,0 +1,14 @@
+apiVersion: v2
+name: sd-it-standards-and-guidelines
+description: "BIAN Service Domain: IT Standards And Guidelines (Catalog pattern, Business Support)"
+type: application
+version: 0.1.0
+appVersion: "0.1.0"
+keywords:
+  - bian
+  - catalog
+annotations:
+  bian/business-area: "Business Support"
+  bian/business-domain: "Technology and Operations"
+  bian/asset-type: "IT Standard"
+  bian/control-record: "IT Standard Directory Entry"

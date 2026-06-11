@@ -1,0 +1,43 @@
+spring:
+  application:
+    name: sd-it-standards-and-guidelines
+
+server:
+  port: 8080
+  shutdown: graceful
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus,metrics
+  endpoint:
+    health:
+      probes:
+        enabled: true   # /actuator/health/liveness + /readiness for K8s probes
+  info:
+    env:
+      enabled: true
+
+info:
+  bian:
+    serviceDomain: "IT Standards And Guidelines"
+    businessArea: "Business Support"
+    businessDomain: "Technology and Operations"
+    functionalPattern: "Catalog"
+    assetType: "IT Standard"
+    controlRecord: "IT Standard Directory Entry"
+
+resilience4j:
+  circuitbreaker:
+    instances:
+      serviceDomain:
+        slidingWindowSize: 20
+        failureRateThreshold: 50
+        waitDurationInOpenState: 10s
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
